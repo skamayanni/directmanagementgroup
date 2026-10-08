@@ -2,7 +2,7 @@
    WEB3FORMS_ACCESS_KEY
 ========================================= */
 const WEB3FORMS_ACCESS_KEY =
-    "706b76aa-3212-4584-9b8a-b632feed9dc4";
+    "a8252f37-e381-47ec-ad33-1268d3bb38dd";
 
 
 

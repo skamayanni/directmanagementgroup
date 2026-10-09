@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore collectible pieces inspired by your favourite moments with THE EXPERIENCE.">
+    <title>Collectibles | THE EXPERIENCE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/collectibles.css">
+    <link rel="stylesheet" href="css/merchandise.css">
+</head>
+<body class="collectibles-page">
+
+    <header class="header merch-nav-container collectibles-header">
+        <a href="index.html" class="logo">
+                <span>THE</span>
+                EXPERIENCE
+            </a>
+
+        <nav class="nav-links collectibles-nav" id="collectiblesNav" aria-label="Main navigation">
+            <a href="index.html" class="nav-celebrity-home">Home</a>
+            <a href="profile.html" class="nav-celebrity-about">About</a>
+            <a href="packages.html" class="nav-celebrity-packages">Packages</a>
+            <a href="donate.html" class="nav-celebrity-support">Donate</a>
+            <a href="#" id="contactTawk">Contact</a>
+            <a href="booking.html#bookingForm" id="profileBooking" class="nav-button">Request a Meet &amp; Greet</a>
+        </nav>
+
+        <div class="collectibles-header-actions">
+            <button type="button" class="merch-cart-button" id="openCart" aria-label="Open collectibles bag">
+                <span class="cart-icon" aria-hidden="true">♧</span>
+                <span>Bag</span>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <button type="button" class="collectibles-menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="merch-hero collectibles-hero">
+            <div class="merch-hero-overlay"></div>
+            <div class="merch-hero-content">
+                <p class="eyebrow">THE COLLECTOR'S EDITION</p>
+                <h1>Keep the<br><span>moment.</span></h1>
+                <p id="collectiblesHeroDescription">Discover keepsakes, display pieces, and limited-edition collectibles inspired by the moments that bring fans together.</p>
+                <a href="#collectiblesCollection" class="merch-hero-button">Explore Collectibles</a>
+            </div>
+        </section>
+
+        <section class="merchandise-section collectibles-section" id="collectiblesCollection">
+            <div class="collectibles-container">
+                <div class="merchandise-heading">
+                    <div>
+                        <p class="eyebrow">CURATED FOR FANS</p>
+                        <h2><span id="collectiblesCelebrityName">Your Favourite Artist</span><br>Collectibles</h2>
+                    </div>
+                    <p class="merchandise-intro" id="collectiblesIntro">Discover keepsakes and display-worthy pieces created for fans who want to hold on to a special moment.</p>
+                </div>
+
+                <div class="merch-filters collectibles-filters" id="collectiblesFilters" aria-label="Filter collectibles">
+                    <button type="button" class="merch-filter active" data-category="all" aria-pressed="true">All Collectibles</button>
+                    <button type="button" class="merch-filter" data-category="signed" aria-pressed="false">Signed Items</button>
+                    <button type="button" class="merch-filter" data-category="memorabilia" aria-pressed="false">Memorabilia</button>
+                    <button type="button" class="merch-filter" data-category="limited" aria-pressed="false">Limited Edition</button>
+                    <button type="button" class="merch-filter" data-category="collectors" aria-pressed="false">Collectors’ Editions</button>
+                </div>
+
+                <div class="collectibles-results-line">
+                    <p id="collectiblesResultsLabel">Explore the collection</p>
+                    <p class="collectibles-results-note">Product artwork may be illustrative unless otherwise specified.</p>
+                </div>
+
+                <div class="merch-product-grid collectibles-product-grid" id="collectiblesProductGrid" aria-live="polite"></div>
+
+                <div class="collection-pagination" id="collectiblesPagination" aria-label="Collection pages">
+                    <button type="button" class="collection-page-button" id="collectiblesPrevPage" disabled>Previous</button>
+                    <span class="collection-page-indicator" id="collectiblesPageIndicator">Page 1 of 1</span>
+                    <button type="button" class="collection-page-button" id="collectiblesNextPage" disabled>Next</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="merch-featured collectibles-featured">
+            <div class="collectibles-container merch-featured-inner">
+                <div>
+                    <p class="eyebrow">A MOMENT WORTH KEEPING</p>
+                    <h2>More than an item.<br><span>A memory.</span></h2>
+                    <p>Find a thoughtful keepsake for your collection or a fan who means the world to you.</p>
+                </div>
+                <a href="#collectiblesCollection" class="merch-outline-button">Browse the Collection</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="collectibles-footer">
+        <div class="collectibles-container collectibles-footer-inner">
+            <a class="collectibles-logo" href="index.html"><span>THE</span><span>EXPERIENCE</span></a>
+            <p>Celebrating the moments that bring fans closer.</p>
+            <p class="collectibles-footer-copy">&copy; <span id="collectiblesYear"></span> THE EXPERIENCE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart overlay and drawer -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Your collectibles bag" aria-hidden="true">
+        <div class="cart-header">
+            <div>
+                <p class="eyebrow">YOUR SELECTION</p>
+                <h2>Your Bag</h2>
+            </div>
+            <button type="button" class="close-cart" id="closeCart" aria-label="Close bag">&times;</button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your bag is waiting for something special.</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total"><span>Estimated total</span><strong id="cartTotal">$0.00</strong></div>
+            <div class="collectibles-checkout-fields">
+                <label for="customerName">Name (optional)</label>
+                <input type="text" id="customerName" name="customerName" autocomplete="name" placeholder="Your name">
+
+                <label for="customerEmail">Email address <span aria-hidden="true">*</span></label>
+                <input type="email" id="customerEmail" name="customerEmail" autocomplete="email" placeholder="you@example.com" required>
+
+                <label for="customerPhone">Phone (optional)</label>
+                <input type="tel" id="customerPhone" name="customerPhone" autocomplete="tel" placeholder="Your phone number">
+            </div>
+            <button type="button" class="checkout-button" id="checkoutButton">Submit Order Request</button>
+            <p class="checkout-note">Submitting sends an order request, not an immediate payment. Our team can follow up with availability and next steps.</p>
+        </div>
+    </aside>
+
+    <!-- Product details modal -->
+    <div class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
+        <div class="product-modal-backdrop" id="productModalBackdrop"></div>
+        <div class="product-modal-content">
+            <button type="button" class="product-modal-close" id="closeProductModal" aria-label="Close product details">&times;</button>
+            <div class="product-modal-grid">
+                <div class="product-modal-image-wrap">
+                    <img src="" alt="" id="modalProductImage">
+                </div>
+                <div class="product-modal-info">
+                    <p class="eyebrow" id="modalProductCategory">COLLECTIBLE</p>
+                    <h2 id="modalProductName">Collectible name</h2>
+                    <strong class="modal-product-price" id="modalProductPrice">$0.00</strong>
+                    <p class="modal-product-description" id="modalProductDescription"></p>
+                    <div class="size-selector" id="sizeSelector" hidden>
+                        <label>Choose an option</label>
+                        <div class="size-options" id="collectibleOptions"></div>
+                    </div>
+                    <div class="modal-quantity">
+                        <label for="modalQuantity">Quantity</label>
+                        <div class="quantity-control">
+                            <button type="button" id="decreaseQuantity" aria-label="Decrease quantity">−</button>
+                            <span id="modalQuantity">1</span>
+                            <button type="button" id="increaseQuantity" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+                    <button type="button" class="modal-add-cart" id="modalAddToCart">Add to Bag</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Use one Tawk.to widget only -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = "https://embed.tawk.to/6ac753de425a3b34c693e324/1k4d9v97q";
+            s1.charset = "UTF-8";
+            s1.setAttribute("crossorigin", "*");
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
+    <script src="js/celebrities.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/collectibles.js"></script>
+</body>
+</html>

@@ -83,14 +83,11 @@
     align-items: center;
 
     background:
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             rgba(8, 8, 8, 0.98),
             rgba(8, 8, 8, 0.68),
-            rgba(8, 8, 8, 0.25)
-        ),
-        url("../images/avery-king-hero.jpg")
-        center/cover no-repeat;
+            rgba(8, 8, 8, 0.25)),
+        url("../images/avery-king-hero.jpg") center/cover no-repeat;
 }
 
 .merch-hero-overlay {
@@ -98,11 +95,9 @@
     inset: 0;
 
     background:
-        radial-gradient(
-            circle at 75% 50%,
+        radial-gradient(circle at 75% 50%,
             rgba(212, 175, 55, 0.10),
-            transparent 40%
-        );
+            transparent 40%);
 }
 
 .merch-hero-content {
@@ -142,7 +137,7 @@
 .merch-hero-content p:not(.eyebrow) {
     max-width: 600px;
 
-    color: rgba(255,255,255,0.72);
+    color: rgba(255, 255, 255, 0.72);
 
     font-size: 17px;
 
@@ -220,7 +215,7 @@
 
     margin: 0;
 
-    color: rgba(255,255,255,0.62);
+    color: rgba(255, 255, 255, 0.62);
 
     line-height: 1.8;
 }
@@ -239,7 +234,7 @@
 
     margin-bottom: 45px;
 
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
     padding-bottom: 18px;
 }
@@ -247,11 +242,11 @@
 .merch-filter {
     padding: 11px 18px;
 
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 
     background: transparent;
 
-    color: rgba(255,255,255,0.65);
+    color: rgba(255, 255, 255, 0.65);
 
     font-family: inherit;
 
@@ -296,7 +291,7 @@
 
     background: #111111;
 
-    border: 1px solid rgba(255,255,255,0.07);
+    border: 1px solid rgba(255, 255, 255, 0.07);
 
     overflow: hidden;
 
@@ -309,7 +304,7 @@
     transform: translateY(-7px);
 
     border-color:
-        rgba(212,175,55,0.35);
+        rgba(212, 175, 55, 0.35);
 }
 
 .merch-product-image {
@@ -334,8 +329,7 @@
         transform 0.6s ease;
 }
 
-.merch-product-card:hover
-.merch-product-image img {
+.merch-product-card:hover .merch-product-image img {
     transform: scale(1.05);
 }
 
@@ -468,17 +462,15 @@
     padding: 90px 0;
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #111111,
-            #171717
-        );
+            #171717);
 
     border-top:
-        1px solid rgba(255,255,255,0.06);
+        1px solid rgba(255, 255, 255, 0.06);
 
     border-bottom:
-        1px solid rgba(255,255,255,0.06);
+        1px solid rgba(255, 255, 255, 0.06);
 }
 
 .merch-featured-inner {
@@ -510,7 +502,7 @@
 }
 
 .merch-featured p:not(.eyebrow) {
-    color: rgba(255,255,255,0.62);
+    color: rgba(255, 255, 255, 0.62);
 
     line-height: 1.7;
 }
@@ -556,7 +548,7 @@
 
     z-index: 9998;
 
-    background: rgba(0,0,0,0.65);
+    background: rgba(0, 0, 0, 0.65);
 
     opacity: 0;
 
@@ -587,7 +579,7 @@
     background: #101010;
 
     border-left:
-        1px solid rgba(212,175,55,0.2);
+        1px solid rgba(212, 175, 55, 0.2);
 
     transform: translateX(100%);
 
@@ -612,7 +604,7 @@
     padding: 30px;
 
     border-bottom:
-        1px solid rgba(255,255,255,0.08);
+        1px solid rgba(255, 255, 255, 0.08);
 }
 
 .cart-header h2 {
@@ -632,7 +624,7 @@
     width: 38px;
     height: 38px;
 
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 
     background: transparent;
 
@@ -656,7 +648,7 @@
 
     padding: 80px 20px;
 
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .cart-item {
@@ -669,7 +661,7 @@
     padding: 18px 0;
 
     border-bottom:
-        1px solid rgba(255,255,255,0.08);
+        1px solid rgba(255, 255, 255, 0.08);
 }
 
 .cart-item-image {
@@ -690,7 +682,7 @@
 }
 
 .cart-item-meta {
-    color: rgba(255,255,255,0.48);
+    color: rgba(255, 255, 255, 0.48);
 
     font-size: 12px;
 }
@@ -710,7 +702,7 @@
 
     background: none;
 
-    color: rgba(255,255,255,0.45);
+    color: rgba(255, 255, 255, 0.45);
 
     font-family: inherit;
 
@@ -727,7 +719,7 @@
     padding: 25px 30px;
 
     border-top:
-        1px solid rgba(255,255,255,0.08);
+        1px solid rgba(255, 255, 255, 0.08);
 }
 
 .cart-total {
@@ -739,7 +731,7 @@
 
     margin-bottom: 20px;
 
-    color: rgba(255,255,255,0.65);
+    color: rgba(255, 255, 255, 0.65);
 }
 
 .cart-total strong {
@@ -775,7 +767,7 @@
 .checkout-note {
     margin: 13px 0 0;
 
-    color: rgba(255,255,255,0.4);
+    color: rgba(255, 255, 255, 0.4);
 
     font-size: 11px;
 
@@ -813,7 +805,7 @@
 
     inset: 0;
 
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .product-modal-content {
@@ -828,7 +820,7 @@
     background: #111111;
 
     border:
-        1px solid rgba(212,175,55,0.2);
+        1px solid rgba(212, 175, 55, 0.2);
 
     z-index: 1;
 }
@@ -845,9 +837,9 @@
     height: 38px;
 
     border:
-        1px solid rgba(255,255,255,0.15);
+        1px solid rgba(255, 255, 255, 0.15);
 
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
 
     color: #ffffff;
 
@@ -908,7 +900,7 @@
 }
 
 .modal-product-description {
-    color: rgba(255,255,255,0.62);
+    color: rgba(255, 255, 255, 0.62);
 
     line-height: 1.8;
 
@@ -947,7 +939,7 @@
     height: 42px;
 
     border:
-        1px solid rgba(255,255,255,0.15);
+        1px solid rgba(255, 255, 255, 0.15);
 
     background: transparent;
 
@@ -973,7 +965,7 @@
     width: fit-content;
 
     border:
-        1px solid rgba(255,255,255,0.15);
+        1px solid rgba(255, 255, 255, 0.15);
 
     margin-bottom: 30px;
 }
@@ -1102,6 +1094,92 @@
 
     .product-modal-info h2 {
         font-size: 34px;
+    }
+
+}
+
+/* =========================================
+   MERCHANDISE / COLLECTIBLES PAGINATION
+========================================= */
+
+.collection-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 55px;
+    padding-bottom: 15px;
+}
+
+.collection-page-button {
+    min-height: 46px;
+    padding: 12px 24px;
+
+    background: transparent;
+    color: #ffffff;
+
+    border: 1px solid rgba(212, 175, 55, 0.55);
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.collection-page-button:hover:not(:disabled) {
+    background: #d4af37;
+    color: #111111;
+    border-color: #d4af37;
+}
+
+.collection-page-button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.collection-page-indicator {
+    color: #d4af37;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* Smooth transition when changing collections */
+
+.merch-product-grid {
+    transition: opacity 0.2s ease;
+}
+
+.merch-product-grid.collection-changing {
+    opacity: 0.25;
+}
+
+
+/* Mobile responsiveness */
+
+@media (max-width: 600px) {
+
+    .collection-pagination {
+        gap: 12px;
+        margin-top: 35px;
+    }
+
+    .collection-page-button {
+        padding: 11px 15px;
+        font-size: 12px;
+    }
+
+    .collection-page-indicator {
+        font-size: 12px;
     }
 
 }

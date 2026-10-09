@@ -141,7 +141,7 @@
 
                     <div>
 
-                        <p class="eyebrow">
+                        <p class="eyebrow" id="collectionEyebrow">
                             SHOP THE COLLECTION
                         </p>
 
@@ -150,14 +150,13 @@
                                 Steve Perry
                             </span>
                             <br>
-                            Merchandise
+                            <span id="collectionTitle">Merchandise</span>
                         </h2>
 
                     </div>
 
                     <p class="merchandise-intro" id="merchandiseIntro">
-                        A curated collection of apparel and
-                        accessories inspired by the experience.
+                        A curated collection of apparel and accessories inspired by the experience.
                     </p>
 
                 </div>
@@ -166,6 +165,7 @@
                 <!-- =================================
                      CATEGORY FILTERS
                 ================================== -->
+
 
                 <div class="merch-filters" id="merchFilters">
 
@@ -182,7 +182,7 @@
                     </button>
 
                     <button type="button" class="merch-filter" data-category="sweatshirt">
-                        sweatshirt
+                        Sweatshirts
                     </button>
 
                     <button type="button" class="merch-filter" data-category="accessories">
@@ -197,10 +197,31 @@
 
 
                 <!-- =================================
-                     PRODUCT GRID
-                ================================== -->
+     PRODUCT GRID
+================================== -->
 
                 <div class="merch-product-grid" id="merchProductGrid">
+                </div>
+
+
+                <!-- =================================
+     COLLECTION PAGINATION
+================================== -->
+
+                <div class="collection-pagination" id="collectionPagination">
+
+                    <button type="button" class="collection-page-button" id="previousCollection" disabled>
+                        ← Previous
+                    </button>
+
+                    <span class="collection-page-indicator" id="collectionPageIndicator">
+                        Page 1 of 2
+                    </span>
+
+                    <button type="button" class="collection-page-button" id="nextCollection">
+                        Next →
+                    </button>
+
                 </div>
 
             </div>
@@ -290,6 +311,21 @@
                 <strong id="cartTotal">
                     $0
                 </strong>
+
+            </div>
+
+            <div class="checkout-customer-details">
+
+                <h3>Customer Details</h3>
+
+                <div class="form-group">
+                    <label for="customerEmail">Email Address *</label>
+                    <input type="email" id="customerEmail" name="customerEmail" placeholder="you@example.com" required
+                        autocomplete="email">
+                    <small>
+                        Enter your email so we can send you purchase information and contact you about your order.
+                    </small>
+                </div>
 
             </div>
 
@@ -514,6 +550,7 @@
         })();
     </script>
     <!--End of Tawk.to Script-->
+
 </body>
 
 </html>

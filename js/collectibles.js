@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // --------------------------------------
         {
             id: "display-photo-frame",
-            name: `${celebrityName} Portrait Photo Frame`,
+            name: `${celebrityName} Display Photo Frame`,
             category: "signed",
             categoryLabel: "signed items",
             price: 2495,
@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         {
             id: "fan-moment-journal",
-            name: `${celebrityName} Fan Moment Pillow`,
+            name: `${celebrityName} Customised True Fan Pillow`,
             category: "memorabilia",
             categoryLabel: "Memorabilia",
             price: 2150,
@@ -370,10 +370,10 @@ document.addEventListener("DOMContentLoaded", function () {
          
         {
             id: "limited-collectors-medallion",
-            name: `${celebrityName} Journey "Escape" "Raised on Radio" "Frontiers" "Greatest Hits" CD Award SIGNED`,
+            name: `${celebrityName}  Journey Lyric Sheet - "Dont stop believin" HANDWRITTEN `,
             category: "limited",
             categoryLabel: "Limited Edition",
-            price: 66250,
+            price: 43500,
             image: `images/${celebrityId}-collectible-medallion.jpg`,
             badge: "Special Edition",
             description:
@@ -404,10 +404,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         {
             id: "commemorative-keyring",
-            name: `${celebrityName} Tune Guitar Technology Bass Manaic (Black) SIGNED`,
+            name: `${celebrityName} Steve Perry Lyric Sheet - "Foolish Heart" HANDWRITTEN `,
             category: "memorabilia",
             categoryLabel: "Memorabilia",
-            price: 7000,
+            price: 8600,
             image: `images/${celebrityId}-collectible-keyring.jpg`,
             badge: "Fan Favourite",
             description:

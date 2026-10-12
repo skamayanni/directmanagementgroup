@@ -421,7 +421,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         {
             id: "signature-inspired-bookmark",
-            name: `${celebrityName} Fender Mustang Bass Guitar (Blue) SIGNED`,
+            name: `${celebrityName} Fender Mustang Bass Guitar (All Colors Available) SIGNED`,
             category: "collectors",
             categoryLabel: "Collectors’ Edition",
             price: 6800,

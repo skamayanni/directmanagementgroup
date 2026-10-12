@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     "use strict";
 
+    // ==========================================
+    // 1. CELEBRITY INFORMATION
+    // ==========================================
+
     const params = new URLSearchParams(window.location.search);
 
     const celebrityId =
@@ -18,32 +22,45 @@ document.addEventListener("DOMContentLoaded", function () {
             ? celebrityData.name
             : "Your Favourite Artist";
 
+
+    // ==========================================
+    // 2. PAGE ELEMENTS
+    // ==========================================
+
     const productGrid = document.getElementById("collectiblesProductGrid");
     const celebrityNameElement = document.getElementById("collectiblesCelebrityName");
     const heroDescription = document.getElementById("collectiblesHeroDescription");
     const intro = document.getElementById("collectiblesIntro");
+
     const cartCount = document.getElementById("cartCount");
     const cartDrawer = document.getElementById("cartDrawer");
     const cartOverlay = document.getElementById("cartOverlay");
     const cartItemsElement = document.getElementById("cartItems");
     const cartTotalElement = document.getElementById("cartTotal");
+
     const productModal = document.getElementById("productModal");
+
     const customerEmail = document.getElementById("customerEmail");
     const checkoutButton = document.getElementById("checkoutButton");
+
+
+    // ==========================================
+    // 3. CURRENCY FORMAT
+    // ==========================================
 
     const currency = "USD";
 
     const formatMoney = value =>
         new Intl.NumberFormat("en-US", {
             style: "currency",
-            currency,
+            currency: currency,
             maximumFractionDigits: 2
         }).format(Number(value) || 0);
 
 
-    /* =========================================
-       CELEBRITY INFORMATION
-    ========================================= */
+    // ==========================================
+    // 4. UPDATE CELEBRITY CONTENT
+    // ==========================================
 
     if (celebrityNameElement) {
         celebrityNameElement.textContent = celebrityName;
@@ -62,9 +79,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.title = `${celebrityName} Collectibles | THE EXPERIENCE`;
 
 
-    /* =========================================
-       CELEBRITY NAVIGATION
-    ========================================= */
+    // ==========================================
+    // 5. KEEP CELEBRITY SELECTED ACROSS PAGES
+    // ==========================================
 
     document.querySelectorAll(".nav-celebrity-home").forEach(link => {
         link.href = `index.html?celebrity=${encodeURIComponent(celebrityId)}`;
@@ -98,16 +115,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================================
-       COLLECTIBLES PRODUCTS
-    ========================================= */
+    // ==========================================
+    // 6. COLLECTIBLES PRODUCTS
+    // TOTAL: 18 PRODUCTS
+    // 6 PRODUCTS PER PAGE = 3 PAGES
+    // ==========================================
 
     const products = [
         {
             id: "collector-display-plaque",
             name: `${celebrityName} Street Talk - SIGNED Vinyl`,
-            category: "collectors",
-            categoryLabel: "Collectors’ Edition",
+            category: "signed",
+            categoryLabel: "signed items",
             price: 2161.76,
             image: `images/${celebrityId}-collectible-plaque.jpg`,
             badge: "Collector Pick",
@@ -116,19 +135,26 @@ document.addEventListener("DOMContentLoaded", function () {
             options: ["Standard", "Deluxe"]
         },
 
+        // --------------------------------------
+        // PRODUCT 2
+        // --------------------------------------
+        
         {
-            id: "commemorative-print",
-            name: `${celebrityName} The Season 3 - Signed Limited Edition`,
-            category: "memorabilia",
-            categoryLabel: "Memorabilia",
-            price:1000,
-            image: `images/${celebrityId}-collectible-print.jpg`,
+            id: "collector-pin-set",
+            name: `${celebrityName} Strange Medicine - 1994 Tour Book. SIGNED`,
+            category: "signed",
+            categoryLabel: "signed items",
+            price: 4825,
+            image: `images/${celebrityId}-collectible-pins.jpg`,
             badge: "",
             description:
-                "A commemorative art print designed for a fan wall or personal display. Frame is not included unless specified in the final product details.",
-            options: ["A4", "A3", "A2"]
+                "A decorative set of collectible pins with a premium-inspired presentation, designed to display or add to a personal collection.",
+            options: ["Set of 3", "Set of 5"]
         },
 
+        // --------------------------------------
+        // PRODUCT 3
+        // --------------------------------------
         {
             id: "limited-numbered-edition",
             name: `${celebrityName} Journey - E5C4P3 (Escape) - SIGNED Vinyl Test Pressing`,
@@ -142,19 +168,25 @@ document.addEventListener("DOMContentLoaded", function () {
             options: ["Standard", "Gift Box"]
         },
 
+        // --------------------------------------
+        // PRODUCT 4
+        // --------------------------------------
         {
-            id: "collector-pin-set",
-            name: `${celebrityName} Strange Medicine - 1994 Tour Book. SIGNED`,
-            category: "collectors",
-            categoryLabel: "Collectors’ Edition",
-            price: 4825,
-            image: `images/${celebrityId}-collectible-pins.jpg`,
+            id: "display-photo-frame",
+            name: `${celebrityName} Display Photo Frame`,
+            category: "signed",
+            categoryLabel: "signed items",
+            price: 2495,
+            image: `images/${celebrityId}-collectible-frame.jpg`,
             badge: "",
             description:
-                "A decorative set of collectible pins with a premium-inspired presentation, designed to display or add to a personal collection.",
-            options: ["Set of 3", "Set of 5"]
+                "A clean, gallery-inspired frame designed to display a favourite photo or print. Photo or artwork is not included unless specified.",
+            options: ["5 × 7 in", "8 × 10 in"]
         },
 
+        // --------------------------------------
+        // PRODUCT 5
+        // --------------------------------------
         {
             id: "commemorative-ticket",
             name: `${celebrityName} Escape - Ampex Golden Reel Awards. SIGNED `,
@@ -168,11 +200,14 @@ document.addEventListener("DOMContentLoaded", function () {
             options: ["Classic", "Framed"]
         },
 
+        // --------------------------------------
+        // PRODUCT 6
+        // --------------------------------------
         {
             id: "autograph-style-card",
             name: `${celebrityName} Journey Handwritten Lyric Sheet`,
-            category: "signed",
-            categoryLabel: "Signed Items",
+            category: "collectors",
+            categoryLabel: "Collectors’ Edition",
             price: 12100,
             image: `images/${celebrityId}-collectible-card.jpg`,
             badge: "",
@@ -180,6 +215,123 @@ document.addEventListener("DOMContentLoaded", function () {
                 "A collector card featuring a signature-inspired graphic design. It is not a genuine signed item and is not presented as an authenticated autograph.",
             options: ["Single Card", "Gift Set"]
         },
+
+
+        // ======================================
+        // PAGE 2 PRODUCTS
+        // PRODUCTS 7–12
+        // ======================================
+
+        // --------------------------------------
+        // PRODUCT 7
+        // --------------------------------------
+
+        {
+            id: "fan-moment-journal",
+            name: `${celebrityName} Fan Moment Pillow`,
+            category: "memorabilia",
+            categoryLabel: "Memorabilia",
+            price: 2150,
+            image: `images/${celebrityId}-collectible-journal.jpg`,
+            badge: "New",
+            description:
+                "A keepsake journal for writing down concert memories, favourite moments, and notes from your fan journey.",
+            options: ["Classic", "Gift Set"]
+        },
+
+        // --------------------------------------
+        // PRODUCT 8
+        // --------------------------------------
+
+        {
+            id: "collectors-postcard-set",
+            name: `${celebrityName} Journey "Greatest Hits" Multi Platinum RIAA Award - SIGNED`,
+            category: "signed",
+            categoryLabel: "signed items",
+            price: 5531.46,
+            image: `images/${celebrityId}-collectible-postcards.jpg`,
+            badge: "",
+            description:
+                "A curated postcard set designed for collecting, framing, or sending to another fan.",
+            options: ["Set of 6", "Set of 12"]
+        },
+
+        // --------------------------------------
+        // PRODUCT 9
+        // --------------------------------------
+
+        {
+            id: "commemorative-stage-print",
+            name: `${celebrityName} Journey RIAA Multi Platinum Album CD Award SIGNED`,
+            category: "memorabilia",
+            categoryLabel: "Memorabilia",
+            price: 10100,
+            image: `images/${celebrityId}-collectible-stage-art.jpg`,
+            badge: "",
+            description:
+                "A stage-inspired art print designed as a decorative tribute to memorable performances. This is commemorative artwork, not an original event photograph unless expressly stated.",
+            options: ["A4", "A3", "A2"]
+        },
+
+        // --------------------------------------
+        // PRODUCT 10
+        // --------------------------------------
+
+        {
+            id: "limited-collector-pin",
+            name: `${celebrityName} Journey Depature (1981) - SIGNED Vinyl (AMG 50006171)`,
+            category: "limited",
+            categoryLabel: "Limited Edition",
+            price: 4000,
+            image: `images/${celebrityId}-collectible-limited-pin.jpg`,
+            badge: "Limited Edition",
+            description:
+                "A decorative pin design for display boards, bags, or a collector's case.",
+            options: ["Single Pin", "Gift Set"]
+        },
+
+        // --------------------------------------
+        // PRODUCT 11
+        // --------------------------------------
+
+        {
+            id: "collector-card-album",
+            name: `${celebrityName} Journey Frontiers - SIGNED Vinyl (AMG 50006217)`,
+            category: "signed",
+            categoryLabel: "signed items",
+            price: 1550,
+            image: `images/${celebrityId}-collectible-album.jpg`,
+            badge: "",
+            description:
+                "A compact album concept for keeping collectible cards and art cards neatly organised.",
+            options: ["Classic", "Deluxe"]
+        },
+
+        // --------------------------------------
+        // PRODUCT 12
+        // --------------------------------------
+
+        {
+            id: "collectors-display-stand",
+            name: `${celebrityName} Journey - E5C4P3 (Escape) - SIGNED Vinyl (AMG 50006222)`,
+            category: "signed",
+            categoryLabel: "signed items",
+            price: 5123.81,
+            image: `images/${celebrityId}-collectible-display-stand.jpg`,
+            badge: "",
+            description:
+                "A simple display stand designed to present a favourite card, plaque, or small keepsake on a shelf or desk. The collectible shown in any sample image is not included unless specified.",
+            options: ["Small", "Large"]
+        },
+
+        // ======================================
+        // PAGE 3 PRODUCTS
+        // PRODUCTS 13–18
+        // ======================================
+
+        // --------------------------------------
+        // PRODUCT 13
+        // --------------------------------------
 
         {
             id: "limited-art-card-set",
@@ -194,28 +346,104 @@ document.addEventListener("DOMContentLoaded", function () {
             options: ["Set of 4", "Set of 8"]
         },
 
+        // --------------------------------------
+        // PRODUCT 14
+        // --------------------------------------
+
         {
             id: "collectors-keepsake-box",
             name: `${celebrityName} Custom New York Licesense Plate SIGNED`,
-            category: "collectors",
-            categoryLabel: "Collectors’ Edition",
+            category: "signed",
+            categoryLabel: "signed items",
             price: 7500,
             image: `images/${celebrityId}-collectible-box.jpg`,
             badge: "",
             description:
                 "A keepsake box concept for storing cards, prints, and other small memorabilia from your collection.",
             options: ["Classic", "Gift Box"]
-        }
+        },
+
+        // --------------------------------------
+        // PRODUCT 15
+        // --------------------------------------
+
+         
+        {
+            id: "limited-collectors-medallion",
+            name: `${celebrityName} Journey "Escape" "Raised on Radio" "Frontiers" "Greatest Hits" CD Award SIGNED`,
+            category: "limited",
+            categoryLabel: "Limited Edition",
+            price: 66250,
+            image: `images/${celebrityId}-collectible-medallion.jpg`,
+            badge: "Special Edition",
+            description:
+                "A decorative medallion concept for display or gifting. Edition details and availability will be confirmed before an order is finalised.",
+            options: ["Display Case", "Gift Box"]
+        },
+
+        // --------------------------------------
+        // PRODUCT 16
+        // --------------------------------------
+
+        {
+            id: "commemorative-print",
+            name: `${celebrityName} The Season 3 - Signed Limited Edition`,
+            category: "memorabilia",
+            categoryLabel: "Memorabilia",
+            price:1000,
+            image: `images/${celebrityId}-collectible-print.jpg`,
+            badge: "",
+            description:
+                "A commemorative art print designed for a fan wall or personal display. Frame is not included unless specified in the final product details.",
+            options: ["A4", "A3", "A2"]
+        },
+
+        // --------------------------------------
+        // PRODUCT 17
+        // --------------------------------------
+
+        {
+            id: "commemorative-keyring",
+            name: `${celebrityName} Tune Guitar Technology Bass Manaic (Black) SIGNED`,
+            category: "memorabilia",
+            categoryLabel: "Memorabilia",
+            price: 7000,
+            image: `images/${celebrityId}-collectible-keyring.jpg`,
+            badge: "Fan Favourite",
+            description:
+                "A small commemorative keepsake made to carry a favourite fandom moment with you.",
+            options: ["Gold Tone", "Silver Tone"]
+        },
+
+        // --------------------------------------
+        // PRODUCT 18
+        // --------------------------------------
+
+        {
+            id: "signature-inspired-bookmark",
+            name: `${celebrityName} Fender Mustang Bass Guitar (Blue) SIGNED`,
+            category: "collectors",
+            categoryLabel: "Collectors’ Edition",
+            price: 6800,
+            image: `images/${celebrityId}-collectible-bookmark.jpg`,
+            badge: "",
+            description:
+                "A decorative bookmark with a signature-inspired graphic. It is a printed design, not a genuine autograph or authenticated signed item.",
+            options: ["Single", "Set of 3"]
+        },
+       
+
     ];
 
 
-    /* =========================================
-       STATE
-    ========================================= */
+    // ==========================================
+    // 7. PAGINATION AND CART VARIABLES
+    // ==========================================
 
     let activeCategory = "all";
     let currentPage = 1;
 
+    // Six products on each page.
     const itemsPerPage = 6;
 
     let selectedProduct = null;
@@ -225,9 +453,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let cart = [];
 
 
-    /* =========================================
-       IMAGE FALLBACK
-    ========================================= */
+    // ==========================================
+    // 8. IMAGE FALLBACK
+    // ==========================================
 
     const gridFallback = "images/collectible-placeholder.jpg";
 
@@ -248,20 +476,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================================
-       CATEGORY FILTERING
-    ========================================= */
+    // ==========================================
+    // 9. FILTER PRODUCTS BY CATEGORY
+    // ==========================================
 
     function getFilteredProducts() {
-        return activeCategory === "all"
-            ? products
-            : products.filter(product => product.category === activeCategory);
+        if (activeCategory === "all") {
+            return products;
+        }
+
+        return products.filter(product => {
+            return product.category === activeCategory;
+        });
     }
 
 
-    /* =========================================
-       DISPLAY PRODUCTS
-    ========================================= */
+    // ==========================================
+    // 10. DISPLAY PRODUCTS AND PAGINATION
+    // ==========================================
 
     function renderProducts() {
         if (!productGrid) return;
@@ -287,8 +519,12 @@ document.addEventListener("DOMContentLoaded", function () {
         productGrid.innerHTML = "";
 
         if (!visibleProducts.length) {
-            productGrid.innerHTML =
-                '<div class="collectible-no-results">No collectibles are listed in this category yet. Please check back soon.</div>';
+            productGrid.innerHTML = `
+                <div class="collectible-no-results">
+                    No collectibles are listed in this category yet.
+                    Please check back soon.
+                </div>
+            `;
         } else {
             visibleProducts.forEach(product => {
 
@@ -339,12 +575,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 view.className = "collectible-view-button";
                 view.textContent = "View Details";
 
-                view.addEventListener("click", () => {
+                view.addEventListener("click", function () {
                     openProduct(product);
                 });
 
                 bottom.append(price, view);
+
                 info.append(category, name, bottom);
+
                 card.append(imageWrap, info);
 
                 productGrid.appendChild(card);
@@ -382,9 +620,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================================
-       FILTER BUTTON EVENTS
-    ========================================= */
+    // ==========================================
+    // 11. CATEGORY FILTER BUTTONS
+    // ==========================================
 
     document
         .querySelectorAll("#collectiblesFilters .merch-filter")
@@ -393,6 +631,7 @@ document.addEventListener("DOMContentLoaded", function () {
             button.addEventListener("click", function () {
 
                 activeCategory = this.dataset.category || "all";
+
                 currentPage = 1;
 
                 document
@@ -414,13 +653,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-    /* =========================================
-       PAGINATION
-    ========================================= */
+    // ==========================================
+    // 12. PREVIOUS AND NEXT PAGE BUTTONS
+    // ==========================================
 
     document
         .getElementById("collectiblesPrevPage")
-        ?.addEventListener("click", () => {
+        ?.addEventListener("click", function () {
 
             if (currentPage > 1) {
                 currentPage--;
@@ -430,7 +669,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document
         .getElementById("collectiblesNextPage")
-        ?.addEventListener("click", () => {
+        ?.addEventListener("click", function () {
 
             const pageCount = Math.max(
                 1,
@@ -446,11 +685,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-    /* =========================================
-       OPEN PRODUCT DETAILS
-    ========================================= */
+    // ==========================================
+    // 13. PRODUCT DETAILS MODAL
+    // ==========================================
 
     function openProduct(product) {
+        if (!productModal) return;
+
         selectedProduct = product;
         selectedQuantity = 1;
 
@@ -481,13 +722,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById("modalQuantity").textContent = "1";
 
-        const selector = document.getElementById("sizeSelector");
+        const selector =
+            document.getElementById("sizeSelector");
+
         const optionsWrap =
             document.getElementById("collectibleOptions");
 
         optionsWrap.innerHTML = "";
 
         if (product.options && product.options.length) {
+
             selector.hidden = false;
 
             product.options.forEach((option, index) => {
@@ -504,7 +748,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     index === 0 ? "true" : "false"
                 );
 
-                button.addEventListener("click", () => {
+                button.addEventListener("click", function () {
 
                     selectedOption = option;
 
@@ -531,18 +775,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         productModal.classList.add("open");
+
         document.body.classList.add("collectibles-modal-open");
     }
 
 
-    /* =========================================
-       CLOSE PRODUCT DETAILS
-    ========================================= */
-
     function closeProduct() {
+        if (!productModal) return;
+
         productModal.classList.remove("open");
+
         document.body.classList.remove("collectibles-modal-open");
     }
+
 
     document
         .getElementById("closeProductModal")
@@ -553,13 +798,13 @@ document.addEventListener("DOMContentLoaded", function () {
         ?.addEventListener("click", closeProduct);
 
 
-    /* =========================================
-       QUANTITY CONTROLS
-    ========================================= */
+    // ==========================================
+    // 14. CHANGE PRODUCT QUANTITY
+    // ==========================================
 
     document
         .getElementById("decreaseQuantity")
-        ?.addEventListener("click", () => {
+        ?.addEventListener("click", function () {
 
             selectedQuantity = Math.max(
                 1,
@@ -570,9 +815,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 String(selectedQuantity);
         });
 
+
     document
         .getElementById("increaseQuantity")
-        ?.addEventListener("click", () => {
+        ?.addEventListener("click", function () {
 
             selectedQuantity = Math.min(
                 99,
@@ -584,13 +830,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-    /* =========================================
-       ADD PRODUCT TO CART
-    ========================================= */
+    // ==========================================
+    // 15. ADD PRODUCT TO CART
+    // ==========================================
 
     document
         .getElementById("modalAddToCart")
-        ?.addEventListener("click", () => {
+        ?.addEventListener("click", function () {
 
             if (!selectedProduct) return;
 
@@ -621,14 +867,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             renderCart();
+
             closeProduct();
+
             openCart();
         });
 
 
-    /* =========================================
-       DISPLAY CART
-    ========================================= */
+    // ==========================================
+    // 16. DISPLAY CART CONTENTS
+    // ==========================================
 
     function renderCart() {
         if (!cartItemsElement) return;
@@ -637,8 +885,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!cart.length) {
 
-            cartItemsElement.innerHTML =
-                '<p class="empty-cart">Your bag is waiting for something special.</p>';
+            cartItemsElement.innerHTML = `
+                <p class="empty-cart">
+                    Your bag is waiting for something special.
+                </p>
+            `;
 
         } else {
 
@@ -648,7 +899,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 row.className = "cart-item";
 
                 const img = document.createElement("img");
-
                 img.className = "cart-item-image";
                 img.alt = item.name;
                 img.loading = "lazy";
@@ -673,7 +923,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 remove.className = "remove-cart-item";
                 remove.textContent = "Remove";
 
-                remove.addEventListener("click", () => {
+                remove.addEventListener("click", function () {
 
                     cart = cart.filter(cartItem =>
                         !(
@@ -688,8 +938,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 details.append(name, meta, remove);
 
                 const price = document.createElement("strong");
-
                 price.className = "cart-item-price";
+
                 price.textContent =
                     formatMoney(item.price * item.quantity);
 
@@ -719,11 +969,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================================
-       OPEN AND CLOSE CART
-    ========================================= */
+    // ==========================================
+    // 17. OPEN AND CLOSE CART
+    // ==========================================
 
     function openCart() {
+
+        if (!cartDrawer || !cartOverlay) return;
+
         cartDrawer.classList.add("open");
         cartOverlay.classList.add("open");
 
@@ -732,7 +985,11 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.add("collectibles-cart-open");
     }
 
+
     function closeCart() {
+
+        if (!cartDrawer || !cartOverlay) return;
+
         cartDrawer.classList.remove("open");
         cartOverlay.classList.remove("open");
 
@@ -740,6 +997,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.classList.remove("collectibles-cart-open");
     }
+
 
     document
         .getElementById("openCart")
@@ -752,9 +1010,9 @@ document.addEventListener("DOMContentLoaded", function () {
     cartOverlay?.addEventListener("click", closeCart);
 
 
-    /* =========================================
-       WEB3FORMS CHECKOUT
-    ========================================= */
+    // ==========================================
+    // 18. SUBMIT ORDER REQUEST
+    // ==========================================
 
     if (checkoutButton) {
 
@@ -774,6 +1032,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 !customerEmail.value.trim() ||
                 !customerEmail.checkValidity()
             ) {
+
                 if (customerEmail) {
 
                     customerEmail.setCustomValidity(
@@ -783,6 +1042,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
 
                     customerEmail.reportValidity();
+
                     customerEmail.focus();
 
                     customerEmail.addEventListener(
@@ -807,18 +1067,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 0
             );
 
-            const itemDetails = cart.map((item, index) =>
+            const itemDetails = cart.map((item, index) => {
 
-                `${index + 1}. ${item.name}\n` +
-                `Option: ${item.option || "Standard"}\n` +
-                `Quantity: ${item.quantity}\n` +
-                `Unit price: ${formatMoney(item.price)}\n` +
-                `Subtotal: ${formatMoney(item.price * item.quantity)}`
+                return (
+                    `${index + 1}. ${item.name}\n` +
+                    `Option: ${item.option || "Standard"}\n` +
+                    `Quantity: ${item.quantity}\n` +
+                    `Unit price: ${formatMoney(item.price)}\n` +
+                    `Subtotal: ${formatMoney(item.price * item.quantity)}`
+                );
 
-            ).join("\n\n");
-
-
-            /* Build order notification */
+            }).join("\n\n");
 
             const formData = new FormData();
 
@@ -882,7 +1141,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             formData.append(
                 "message",
-
                 `NEW COLLECTIBLES ORDER REQUEST
 
 Celebrity: ${celebrityName}
@@ -900,9 +1158,6 @@ Estimated order total: ${formatMoney(totalPrice)}
 
 This is an order request only. Confirm availability, shipping, and payment arrangements with the customer before processing.`
             );
-
-
-            /* Send the order request */
 
             const originalText = checkoutButton.textContent;
 
@@ -935,6 +1190,7 @@ This is an order request only. Confirm availability, shipping, and payment arran
                 );
 
                 cart = [];
+
                 renderCart();
 
                 if (nameInput) {
@@ -947,7 +1203,7 @@ This is an order request only. Confirm availability, shipping, and payment arran
 
                 customerEmail.value = "";
 
-                setTimeout(() => {
+                setTimeout(function () {
 
                     checkoutButton.disabled = false;
                     checkoutButton.textContent = originalText;
@@ -956,10 +1212,7 @@ This is an order request only. Confirm availability, shipping, and payment arran
 
                 }, 1200);
 
-
-                /* Open Tawk chat after successful submission */
-
-                setTimeout(() => {
+                setTimeout(function () {
 
                     if (
                         typeof Tawk_API !== "undefined" &&
@@ -988,9 +1241,9 @@ This is an order request only. Confirm availability, shipping, and payment arran
     }
 
 
-    /* =========================================
-       TAWK CHAT CONTACT
-    ========================================= */
+    // ==========================================
+    // 19. CONTACT BUTTON / LIVE CHAT
+    // ==========================================
 
     document
         .getElementById("contactTawk")
@@ -1014,14 +1267,19 @@ This is an order request only. Confirm availability, shipping, and payment arran
         });
 
 
-    /* =========================================
-       MOBILE NAVIGATION
-    ========================================= */
+    // ==========================================
+    // 20. MOBILE NAVIGATION
+    // ==========================================
 
-    const menuToggle = document.getElementById("menuToggle");
-    const nav = document.getElementById("collectiblesNav");
+    const menuToggle =
+        document.getElementById("menuToggle");
 
-    menuToggle?.addEventListener("click", () => {
+    const nav =
+        document.getElementById("collectiblesNav");
+
+    menuToggle?.addEventListener("click", function () {
+
+        if (!nav) return;
 
         const isOpen = nav.classList.toggle("mobile-open");
 
@@ -1033,7 +1291,7 @@ This is an order request only. Confirm availability, shipping, and payment arran
 
     nav?.querySelectorAll("a").forEach(link => {
 
-        link.addEventListener("click", () => {
+        link.addEventListener("click", function () {
 
             nav.classList.remove("mobile-open");
 
@@ -1045,15 +1303,21 @@ This is an order request only. Confirm availability, shipping, and payment arran
     });
 
 
-    /* =========================================
-       INITIALISE PAGE
-    ========================================= */
+    // ==========================================
+    // 21. CURRENT YEAR
+    // ==========================================
 
-    const yearElement = document.getElementById("collectiblesYear");
+    const yearElement =
+        document.getElementById("collectiblesYear");
 
     if (yearElement) {
         yearElement.textContent = String(new Date().getFullYear());
     }
+
+
+    // ==========================================
+    // 22. INITIALISE PAGE
+    // ==========================================
 
     renderProducts();
     renderCart();

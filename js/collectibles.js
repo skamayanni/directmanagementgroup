@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // --------------------------------------
         {
             id: "display-photo-frame",
-            name: `${celebrityName} Display Photo Frame`,
+            name: `${celebrityName} Portrait Photo Frame`,
             category: "signed",
             categoryLabel: "signed items",
             price: 2495,

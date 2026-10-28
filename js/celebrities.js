@@ -69,7 +69,7 @@ const celebrities = {
 
                 name: "Essential",
 
-                price: 3580,
+                price: 2050,
 
                 description:
                     "A personal meet-and-greet experience."
@@ -80,7 +80,7 @@ const celebrities = {
 
                 name: "Premium",
 
-                price: 10099,
+                price: 4580,
 
                 description:
                     "An extended personal experience with additional time."
@@ -91,7 +91,7 @@ const celebrities = {
 
                 name: "VIP",
 
-                price: 34999,
+                price: 10099,
 
                 description:
                     "The complete premium experience."
@@ -693,7 +693,7 @@ const celebrities = {
 
                 name: "Essential",
 
-                price: 3580,
+                price: 2050,
 
                 description:
                     "A personal meet-and-greet experience."
@@ -704,7 +704,7 @@ const celebrities = {
 
                 name: "Premium",
 
-                price: 10099,
+                price: 4580,
 
                 description:
                     "An extended personal experience with additional time."
@@ -715,7 +715,7 @@ const celebrities = {
 
                 name: "VIP",
 
-                price: 34999,
+                price: 10099,
 
                 description:
                     "The complete premium experience."
@@ -785,7 +785,7 @@ const celebrities = {
 
                 name: "Essential",
 
-                price: 3580,
+                price: 2050,
 
                 description:
                     "A personal meet-and-greet experience."
@@ -796,7 +796,7 @@ const celebrities = {
 
                 name: "Premium",
 
-                price: 10099,
+                price: 4580,
 
                 description:
                     "An extended personal experience with additional time."
@@ -807,7 +807,7 @@ const celebrities = {
 
                 name: "VIP",
 
-                price: 34999,
+                price: 10099,
 
                 description:
                     "The complete premium experience."
